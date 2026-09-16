@@ -52,9 +52,9 @@
   <script>
     (function() {
       try {
-        var t = localStorage.getItem('agy_theme') || 'apple_bento_glass';
+        var t = 'apple_bento_glass';
         document.documentElement.setAttribute('data-theme', t);
-        if (t === 'swiss_minimal') {
+        if (t === 'swiss_minimal' || t === 'apple_bento_glass') {
           document.documentElement.classList.remove('dark');
         } else {
           document.documentElement.classList.add('dark');
@@ -169,6 +169,38 @@
       color: #0f172a !important;
       border-color: #cbd5e1 !important;
     }
+
+    html[data-theme="apple_bento_glass"] body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+    }
+    html[data-theme="apple_bento_glass"] .bg-\[\#0c0e14\],
+    html[data-theme="apple_bento_glass"] .bg-\[\#fafaf9\] { background-color: #f8fafc !important; }
+    html[data-theme="apple_bento_glass"] header {
+      background-color: rgba(255, 255, 255, 0.85) !important;
+      backdrop-filter: blur(20px) !important;
+      border-color: rgba(226, 232, 240, 0.8) !important;
+    }
+    html[data-theme="apple_bento_glass"] .border-\[\#1e2333\],
+    html[data-theme="apple_bento_glass"] .border-\[\#3b1d68\] { border-color: #e2e8f0 !important; }
+    html[data-theme="apple_bento_glass"] .text-\[\#e2e8f0\],
+    html[data-theme="apple_bento_glass"] .text-\[\#cbd5e1\],
+    html[data-theme="apple_bento_glass"] .text-\[\#e9d5ff\] { color: #0f172a !important; }
+    html[data-theme="apple_bento_glass"] .text-\[\#10b981\] { color: #0284c7 !important; }
+    html[data-theme="apple_bento_glass"] .bg-\[\#10b981\] { background-color: #0284c7 !important; color: #ffffff !important; }
+    html[data-theme="apple_bento_glass"] .bg-\[\#10b981\]\/10 { background-color: rgba(2, 132, 199, 0.1) !important; }
+    html[data-theme="apple_bento_glass"] .border-\[\#10b981\]\/30 { border-color: rgba(2, 132, 199, 0.25) !important; }
+    html[data-theme="apple_bento_glass"] [style*="color: #10b981"],
+    html[data-theme="apple_bento_glass"] [style*="color:#10b981"] { color: #0284c7 !important; }
+    html[data-theme="apple_bento_glass"] #header-terminal-dots { display: none !important; }
+    html[data-theme="apple_bento_glass"] input,
+    html[data-theme="apple_bento_glass"] textarea,
+    html[data-theme="apple_bento_glass"] select {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #cbd5e1 !important;
+    }
   </style>
 
   <!-- Structured Data JSON-LD (WebSite & SearchAction) -->
@@ -252,9 +284,11 @@
         
 
         <a href="/" class="flex items-center space-x-2.5 sm:space-x-3 group">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg flex items-center justify-center font-black text-base sm:text-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-2xl shadow-lg shadow-sky-500/25">
-            C
+          
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center font-bold text-sm bg-gradient-to-tr from-sky-400 to-blue-600 text-white shadow-lg shadow-sky-500/20">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
           </div>
+          
           <span class="text-base sm:text-lg font-extrabold tracking-tight truncate max-w-[150px] sm:max-w-none">
             CrossCalc - Cross-Border E-Commerce & FBA Suite
           </span>
@@ -360,49 +394,7 @@
           <kbd class="hidden sm:inline text-[9px] px-1 py-0.5 rounded border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 opacity-50 bg-black/20 font-mono">Ctrl+K</kbd>
         </button>
 
-        <!-- Interactive Multi-Theme Selector Dropdown -->
-        <div class="relative inline-block text-left" id="theme-selector-container">
-          <button id="theme-toggle-btn" type="button" class="inline-flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg text-xs font-mono border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 hover:opacity-90 transition bg-black/20" title="Theme Style">
-            <span id="theme-current-icon" class="text-sm leading-none">🖤</span>
-            <span id="theme-current-name" class="hidden xl:inline text-xs font-medium">Terminal Black</span>
-            <svg class="w-3 h-3 opacity-60 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-50 py-1.5 font-mono text-xs shadow-2xl backdrop-blur-xl">
-            <div class="px-3 py-1 text-[10px] uppercase tracking-wider opacity-50 border-b border-white/10 mb-1">
-              Theme Style
-            </div>
-            <button type="button" onclick="window.switchTheme('terminal_dev', true)" data-theme-opt="terminal_dev" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
-              <div class="flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-[#10b981] inline-block shadow-[0_0_6px_#10b981]"></span>
-                <span class="font-medium group-hover:text-emerald-400 transition">Terminal Black</span>
-              </div>
-              <span class="theme-check text-emerald-400 font-bold opacity-0">&check;</span>
-            </button>
-            <button type="button" onclick="window.switchTheme('cyber_electric', true)" data-theme-opt="cyber_electric" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
-              <div class="flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-[#38bdf8] inline-block shadow-[0_0_6px_#38bdf8]"></span>
-                <span class="font-medium group-hover:text-sky-400 transition">Cyber Neon</span>
-              </div>
-              <span class="theme-check text-sky-400 font-bold opacity-0">&check;</span>
-            </button>
-            <button type="button" onclick="window.switchTheme('midnight_purple', true)" data-theme-opt="midnight_purple" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
-              <div class="flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-[#c084fc] inline-block shadow-[0_0_6px_#c084fc]"></span>
-                <span class="font-medium group-hover:text-purple-400 transition">Midnight Purple</span>
-              </div>
-              <span class="theme-check text-purple-400 font-bold opacity-0">&check;</span>
-            </button>
-            <button type="button" onclick="window.switchTheme('swiss_minimal', true)" data-theme-opt="swiss_minimal" class="w-full flex items-center justify-between px-3 py-2 hover:bg-white/10 transition text-left group">
-              <div class="flex items-center space-x-2">
-                <span class="w-3 h-3 rounded-full bg-[#2563eb] inline-block shadow-[0_0_6px_#2563eb]"></span>
-                <span class="font-medium group-hover:text-blue-500 transition">Swiss Minimal</span>
-              </div>
-              <span class="theme-check text-blue-500 font-bold opacity-0">&check;</span>
-            </button>
-          </div>
-        </div>
+
 
         <!-- 7-Language International Dropdown -->
         <div class="relative inline-block text-left" id="lang-container">
@@ -467,28 +459,7 @@
     <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/80 dark:border-slate-800/80 bg-white/75 dark:bg-[#0f172a]/75 backdrop-blur-2xl px-4 pt-3 pb-5 space-y-2 backdrop-blur-lg">
       <a href="/" class="block px-3 py-2 rounded-xl text-sm font-semibold hover:bg-white/10 transition">Home</a>
 
-      <!-- Mobile Theme Switcher Bar -->
-      <div class="py-2 border-b border-white/10 mb-2">
-        <div class="text-[10px] uppercase font-mono opacity-50 mb-1.5">Theme Style</div>
-        <div class="grid grid-cols-4 gap-1.5">
-          <button onclick="window.switchTheme('terminal_dev', true)" title="Terminal Black" class="p-1.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#10b981] mb-1"></span>
-            <span class="truncate max-w-full">Terminal</span>
-          </button>
-          <button onclick="window.switchTheme('cyber_electric', true)" title="Cyber Neon" class="p-1.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#38bdf8] mb-1"></span>
-            <span class="truncate max-w-full">Cyber</span>
-          </button>
-          <button onclick="window.switchTheme('midnight_purple', true)" title="Midnight Purple" class="p-1.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#c084fc] mb-1"></span>
-            <span class="truncate max-w-full">Purple</span>
-          </button>
-          <button onclick="window.switchTheme('swiss_minimal', true)" title="Swiss Minimal" class="p-1.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-black/20 flex flex-col items-center text-[10px] font-mono hover:bg-white/10 transition">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#2563eb] mb-1"></span>
-            <span class="truncate max-w-full">Minimal</span>
-          </button>
-        </div>
-      </div>
+
 
       <!-- Quick Search Trigger in Mobile Drawer -->
       <button id="mobile-search-trigger" type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-black/20 text-xs font-mono opacity-80">
@@ -548,126 +519,218 @@
     
 
     
-        <div class="max-w-7xl mx-auto">
-          <!-- Hero Banner (Mobile & Desktop Responsive) -->
-          <div class="text-center py-8 sm:py-12 md:py-16">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs font-mono mb-4 sm:mb-5">
-              <span>Cross-Border E-Commerce & Amazon FBA Calculator Suite</span>
-            </div>
-            <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight mb-3 sm:mb-4">
-              CrossCalc - Cross-Border E-Commerce & FBA Suite
-            </h1>
-            <p class="max-w-2xl mx-auto text-xs sm:text-sm md:text-base opacity-75 leading-relaxed px-2">
-              Calculate Amazon FBA fees, Shopify profit margins, landed freight apportionment, customs tariffs, and break-even ROAS.
-            </p>
-          </div>
+    <div class="max-w-7xl mx-auto px-2 sm:px-4">
+      <!-- Live Cross-Border E-Commerce & Freight Benchmarks Ribbon -->
+      <div class="mb-6 sm:mb-8 p-3.5 rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-sm flex flex-wrap items-center justify-between gap-2.5 text-[11px] sm:text-xs font-mono text-slate-600 dark:text-slate-300">
+        <div class="flex items-center space-x-2">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-sky-500 animate-pulse"></span>
+          <span class="font-bold text-slate-800 dark:text-slate-200">Live Cross-Border E-Commerce & Freight Benchmarks:</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="px-2.5 py-1 rounded-full bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 font-semibold">USD/EUR: 0.92</span>
+          <span class="px-2.5 py-1 rounded-full bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 font-semibold">USD/CNY: 7.24</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Air Express: ~$6.50/kg</span>
+          <span class="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Matson Ocean: ~$1.40/kg</span>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold">Amazon Referral: 15% avg</span>
+        </div>
+      </div>
 
-          <!-- Real-Time Interactive Filter & Search Bar -->
-          <div class="max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
-            <div class="relative flex items-center">
-              <div class="absolute left-4 opacity-50 pointer-events-none">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
+      <!-- Hero Bento Section Header & Instant Search -->
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gradient-to-r from-sky-500/10 to-blue-500/10 border border-sky-400/30 text-sky-600 dark:text-sky-400 text-xs font-semibold mb-3">
+          <span>Cross-Border E-Commerce & Amazon FBA Calculator Suite</span>
+        </div>
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50 mb-3 sm:mb-4">
+          CrossCalc - Cross-Border E-Commerce & FBA Suite
+        </h1>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto mb-6">
+          Calculate Amazon FBA fees, Shopify profit margins, landed freight apportionment, customs tariffs, and break-even ROAS.
+        </p>
+
+        <!-- Floating Apple Glass Search Bar -->
+        <div class="max-w-xl mx-auto relative flex items-center">
+          <div class="absolute left-4 opacity-50 pointer-events-none">
+            <svg class="w-4 h-4 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <input type="text" id="tool-search" placeholder="Search tools by keyword, format... (Press / to focus)" class="w-full pl-11 pr-20 py-3.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl text-xs sm:text-sm font-mono shadow-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+          <div class="absolute right-3.5 flex items-center space-x-1.5">
+            <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded-full border border-slate-300 dark:border-slate-700 opacity-60 bg-slate-100 dark:bg-slate-800">Ctrl+K</kbd>
+            <button id="btn-clear-search" class="hidden text-xs opacity-60 hover:opacity-100 font-mono px-1">&times;</button>
+          </div>
+        </div>
+        <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 mt-2 max-w-xl mx-auto px-2">
+          <span id="search-stats">Showing all 6 developer utilities</span>
+          <span class="hidden sm:inline">100% Client-Side Evaluation</span>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div id="no-tools-found" class="hidden text-center py-12 px-4 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl mb-12">
+        <p class="text-sm font-mono text-slate-600 dark:text-slate-300 mb-3">No developer tools matching your query.</p>
+        <button id="btn-reset-filter" class="px-5 py-2 rounded-full text-xs font-mono font-bold border border-slate-300 dark:border-slate-700 hover:bg-white transition">
+          Reset Filter
+        </button>
+      </div>
+
+      <!-- Asymmetric Apple Bento Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12 sm:mb-16">
+        <div class="col-span-1 md:col-span-2 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-white/90 via-sky-50/50 to-white/90 dark:from-slate-900/90 dark:via-sky-950/20 dark:to-slate-900/90 backdrop-blur-2xl border-2 border-sky-400/30 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono uppercase px-3 py-1 rounded-full bg-sky-500 text-white font-bold tracking-wide">FEATURED BENTO SIMULATOR</span>
+              <span class="text-xs font-mono text-sky-600 dark:text-sky-400 font-bold">100% CLIENT-SIDE</span>
+            </div>
+            <h2 class="text-lg sm:text-2xl font-black text-slate-900 dark:text-slate-50 mb-2">Amazon FBA vs DTC Profit & Margin Simulator</h2>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">Slide price and manufacturing cost to compute real-time FBA Pick & Pack, Referral, and DTC net take-home margins.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+              <div>
+                <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-200 mb-1.5 font-mono">
+                  <span>Product Retail Price</span>
+                  <span id="bento-price-val" class="text-sky-600 dark:text-sky-400 font-extrabold">$39.99</span>
+                </div>
+                <input type="range" id="bento-price-slider" min="10" max="200" step="1" value="40" class="w-full accent-sky-500">
               </div>
-              <input type="text" id="tool-search" placeholder="Search tools by keyword, format... (Press / to focus)" class="w-full pl-11 pr-20 py-3 sm:py-3.5 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-black/10 dark:bg-black/30 text-xs sm:text-sm font-mono focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transition">
-              <div class="absolute right-3.5 flex items-center space-x-1.5">
-                <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-mono rounded border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 opacity-50 bg-black/20">Ctrl+K</kbd>
-                <button id="btn-clear-search" class="hidden text-xs opacity-60 hover:opacity-100 font-mono px-1">&times;</button>
+              <div>
+                <div class="flex justify-between text-xs font-bold text-slate-700 dark:text-slate-200 mb-1.5 font-mono">
+                  <span>Landed Cost of Goods (COGS)</span>
+                  <span id="bento-cogs-val" class="text-slate-600 dark:text-slate-400 font-extrabold">$9.50</span>
+                </div>
+                <input type="range" id="bento-cogs-slider" min="2" max="80" step="0.5" value="9.5" class="w-full accent-sky-500">
               </div>
             </div>
-            <div class="flex items-center justify-between text-[11px] font-mono opacity-60 mt-2.5 px-1">
-              <span id="search-stats">Showing all 6 developer utilities</span>
-              <span class="hidden sm:inline">100% Client-Side Evaluation</span>
+
+            <div class="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 mb-4">
+              <div>
+                <span class="block text-[11px] font-mono text-slate-500">Amazon FBA & Referral Fees (est.):</span>
+                <span id="bento-fees-disp" class="text-sm sm:text-base font-bold text-amber-600 dark:text-amber-400 font-mono">$10.75</span>
+              </div>
+              <div>
+                <span class="block text-[11px] font-mono text-slate-500">Net Profit per Unit:</span>
+                <span id="bento-profit-disp" class="text-lg sm:text-xl font-black text-emerald-600 dark:text-emerald-400 font-mono">$19.74</span>
+              </div>
+              <div>
+                <span class="block text-[11px] font-mono text-slate-500">Net Margin:</span>
+                <span id="bento-margin-disp" class="inline-block mt-0.5 px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-mono font-bold text-xs">49.4%</span>
+              </div>
             </div>
           </div>
 
-          <!-- Empty State (Hidden by default) -->
-          <div id="no-tools-found" class="hidden text-center py-12 px-4 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-black/5 dark:bg-white/5 mb-12">
-            <p class="text-sm font-mono opacity-75 mb-3">No developer tools matching your query.</p>
-            <button id="btn-reset-filter" class="px-4 py-1.5 rounded-xl text-xs font-mono font-bold border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 hover:bg-white/10 transition">
-              Reset Filter
-            </button>
-          </div>
-
-          <!-- Grid of Tools (1 col mobile, 2 cols tablet, 3 cols desktop) -->
-          <div id="tools-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 mb-12 sm:mb-16">
-            <a href="/amazon-fba-fee-calculator" data-search="amazon fba fee & profit calculator - fulfillment & referral margin estimator calculate amazon fba fulfillment fees, category referral percentages, storage costs, and exact net profit margin per unit. amazon fba calculator fba fee calculator amazon referral fee fba profit margin calculator amazon seller revenue calculator amazon-fba-fee-calculator" class="tool-card bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-xl p-5 sm:p-6 border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Amazon FBA Fee & Profit Calculator - Fulfillment & Referral Margin Estimator</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Calculate Amazon FBA fulfillment fees, category referral percentages, storage costs, and exact net profit margin per unit.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#amazon fba calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#fba fee calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#amazon referral fee</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #0284c7"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
-<a href="/shopify-profit-margin-calculator" data-search="shopify & dtc profit margin calculator - break-even roas & markup estimator analyze your e-commerce store margins factoring in product cogs, shipping, ad spend (cpa), and payment processing fees. shopify profit margin calculator ecommerce breakeven roas dtc markup calculator product gross margin calculator dropshipping ad spend cpa shopify-profit-margin-calculator" class="tool-card bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-xl p-5 sm:p-6 border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Shopify & DTC Profit Margin Calculator - Break-Even ROAS & Markup Estimator</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Analyze your e-commerce store margins factoring in product COGS, shipping, ad spend (CPA), and payment processing fees.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#shopify profit margin calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#ecommerce breakeven roas</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#dtc markup calculator</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #0284c7"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
-<a href="/cross-border-landed-cost-calculator" data-search="cross-border landed cost calculator - freight & customs apportioner determine your exact per-unit landed cost factoring in fob factory pricing, ocean/air freight apportionment, import tariffs, and harbor handling. landed cost calculator cross border import cost fob to cif calculator freight apportionment calculator per unit landed cost cross-border-landed-cost-calculator" class="tool-card bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-xl p-5 sm:p-6 border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Cross-Border Landed Cost Calculator - Freight & Customs Apportioner</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Determine your exact per-unit landed cost factoring in FOB factory pricing, ocean/air freight apportionment, import tariffs, and harbor handling.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#landed cost calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#cross border import cost</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#fob to cif calculator</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #0284c7"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
-<a href="/vat-customs-tariff-calculator" data-search="import customs tariff & reverse vat calculator - cross-border tax estimator calculate expected customs import duties and import vat/gst based on invoice declared value and destination tax policies. import tariff calculator customs duty and vat calculator cross border import tax hs code tariff estimator calculate import duties free vat-customs-tariff-calculator" class="tool-card bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-xl p-5 sm:p-6 border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Import Customs Tariff & Reverse VAT Calculator - Cross-Border Tax Estimator</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Calculate expected customs import duties and import VAT/GST based on invoice declared value and destination tax policies.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#import tariff calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#customs duty and vat calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#cross border import tax</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #0284c7"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
-<a href="/payment-gateway-fee-estimator" data-search="payment gateway fee estimator - stripe vs paypal vs shopify payments fee comparison compare total merchant fees and net deposits across stripe, paypal, and shopify payments. optimize your blended payment transaction costs. payment gateway fee calculator stripe fee calculator paypal transaction fee calculator shopify payments fee comparison merchant processing cost estimator payment-gateway-fee-estimator" class="tool-card bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-xl p-5 sm:p-6 border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Payment Gateway Fee Estimator - Stripe vs PayPal vs Shopify Payments Fee Comparison</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Compare total merchant fees and net deposits across Stripe, PayPal, and Shopify Payments. Optimize your blended payment transaction costs.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#payment gateway fee calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#stripe fee calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#paypal transaction fee calculator</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #0284c7"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
-<a href="/dropshipping-breakeven-calculator" data-search="dropshipping break-even calculator - maximum ad cpa & minimum price estimator calculate the minimum viable selling price and maximum allowable ad spend (cpa) for dropshipped products to avoid running unprofitably. dropshipping breakeven calculator max ad cpa calculator dropshipping profit margins minimum selling price dropship facebook ads breakeven roas dropshipping-breakeven-calculator" class="tool-card bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-xl p-5 sm:p-6 border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5">TOOL</span><span class="text-[11px] opacity-50 font-mono">100% Local</span></div><h3 class="text-base sm:text-lg font-bold group-hover:underline transition mb-2 tracking-tight">Dropshipping Break-Even Calculator - Maximum Ad CPA & Minimum Price Estimator</h3><p class="text-xs opacity-75 line-clamp-2 mb-4 leading-relaxed">Calculate the minimum viable selling price and maximum allowable ad spend (CPA) for dropshipped products to avoid running unprofitably.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#dropshipping breakeven calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#max ad cpa calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 text-[11px] sm:text-xs px-2 py-0.5 rounded mr-1.5 mb-1.5 font-mono'>#dropshipping profit margins</span></div><div class="text-xs font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform" style="color: #0284c7"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
+          <div class="text-right">
+            <a href="/amazon-fba-fee-calculator" class="inline-flex items-center text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline">
+              <span>Open Full FBA Calculator →</span>
+            </a>
           </div>
         </div>
 
-        <script>
-        (function() {
-          const searchInput = document.getElementById('tool-search');
-          const clearBtn = document.getElementById('btn-clear-search');
-          const resetBtn = document.getElementById('btn-reset-filter');
-          const emptyState = document.getElementById('no-tools-found');
-          const cards = Array.from(document.querySelectorAll('.tool-card'));
-          const statsEl = document.getElementById('search-stats');
-          const totalCards = cards.length;
+        <a href="/amazon-fba-fee-calculator" data-search="amazon fba fee & profit calculator - fulfillment & referral margin estimator calculate amazon fba fulfillment fees, category referral percentages, storage costs, and exact net profit margin per unit. amazon fba calculator fba fee calculator amazon referral fee fba profit margin calculator amazon seller revenue calculator amazon-fba-fee-calculator" class="tool-card rounded-3xl p-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-sky-500/50 hover:shadow-xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 font-bold">TOOL</span><span class="text-[10px] text-slate-400 font-mono">100% Client-Side</span></div><h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition mb-2">Amazon FBA Fee & Profit Calculator - Fulfillment & Referral Margin Estimator</h3><p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-4 leading-relaxed">Calculate Amazon FBA fulfillment fees, category referral percentages, storage costs, and exact net profit margin per unit.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#amazon fba calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#fba fee calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#amazon referral fee</span></div><div class="text-xs font-bold text-sky-600 dark:text-sky-400 flex items-center space-x-1 group-hover:translate-x-1 transition-transform"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
+<a href="/shopify-profit-margin-calculator" data-search="shopify & dtc profit margin calculator - break-even roas & markup estimator analyze your e-commerce store margins factoring in product cogs, shipping, ad spend (cpa), and payment processing fees. shopify profit margin calculator ecommerce breakeven roas dtc markup calculator product gross margin calculator dropshipping ad spend cpa shopify-profit-margin-calculator" class="tool-card rounded-3xl p-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-sky-500/50 hover:shadow-xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 font-bold">TOOL</span><span class="text-[10px] text-slate-400 font-mono">100% Client-Side</span></div><h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition mb-2">Shopify & DTC Profit Margin Calculator - Break-Even ROAS & Markup Estimator</h3><p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-4 leading-relaxed">Analyze your e-commerce store margins factoring in product COGS, shipping, ad spend (CPA), and payment processing fees.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#shopify profit margin calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#ecommerce breakeven roas</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#dtc markup calculator</span></div><div class="text-xs font-bold text-sky-600 dark:text-sky-400 flex items-center space-x-1 group-hover:translate-x-1 transition-transform"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
+<a href="/cross-border-landed-cost-calculator" data-search="cross-border landed cost calculator - freight & customs apportioner determine your exact per-unit landed cost factoring in fob factory pricing, ocean/air freight apportionment, import tariffs, and harbor handling. landed cost calculator cross border import cost fob to cif calculator freight apportionment calculator per unit landed cost cross-border-landed-cost-calculator" class="tool-card rounded-3xl p-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-sky-500/50 hover:shadow-xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 font-bold">TOOL</span><span class="text-[10px] text-slate-400 font-mono">100% Client-Side</span></div><h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition mb-2">Cross-Border Landed Cost Calculator - Freight & Customs Apportioner</h3><p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-4 leading-relaxed">Determine your exact per-unit landed cost factoring in FOB factory pricing, ocean/air freight apportionment, import tariffs, and harbor handling.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#landed cost calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#cross border import cost</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#fob to cif calculator</span></div><div class="text-xs font-bold text-sky-600 dark:text-sky-400 flex items-center space-x-1 group-hover:translate-x-1 transition-transform"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
+<a href="/vat-customs-tariff-calculator" data-search="import customs tariff & reverse vat calculator - cross-border tax estimator calculate expected customs import duties and import vat/gst based on invoice declared value and destination tax policies. import tariff calculator customs duty and vat calculator cross border import tax hs code tariff estimator calculate import duties free vat-customs-tariff-calculator" class="tool-card rounded-3xl p-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-sky-500/50 hover:shadow-xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 font-bold">TOOL</span><span class="text-[10px] text-slate-400 font-mono">100% Client-Side</span></div><h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition mb-2">Import Customs Tariff & Reverse VAT Calculator - Cross-Border Tax Estimator</h3><p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-4 leading-relaxed">Calculate expected customs import duties and import VAT/GST based on invoice declared value and destination tax policies.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#import tariff calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#customs duty and vat calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#cross border import tax</span></div><div class="text-xs font-bold text-sky-600 dark:text-sky-400 flex items-center space-x-1 group-hover:translate-x-1 transition-transform"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
+<a href="/payment-gateway-fee-estimator" data-search="payment gateway fee estimator - stripe vs paypal vs shopify payments fee comparison compare total merchant fees and net deposits across stripe, paypal, and shopify payments. optimize your blended payment transaction costs. payment gateway fee calculator stripe fee calculator paypal transaction fee calculator shopify payments fee comparison merchant processing cost estimator payment-gateway-fee-estimator" class="tool-card rounded-3xl p-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-sky-500/50 hover:shadow-xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 font-bold">TOOL</span><span class="text-[10px] text-slate-400 font-mono">100% Client-Side</span></div><h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition mb-2">Payment Gateway Fee Estimator - Stripe vs PayPal vs Shopify Payments Fee Comparison</h3><p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-4 leading-relaxed">Compare total merchant fees and net deposits across Stripe, PayPal, and Shopify Payments. Optimize your blended payment transaction costs.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#payment gateway fee calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#stripe fee calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#paypal transaction fee calculator</span></div><div class="text-xs font-bold text-sky-600 dark:text-sky-400 flex items-center space-x-1 group-hover:translate-x-1 transition-transform"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
+<a href="/dropshipping-breakeven-calculator" data-search="dropshipping break-even calculator - maximum ad cpa & minimum price estimator calculate the minimum viable selling price and maximum allowable ad spend (cpa) for dropshipped products to avoid running unprofitably. dropshipping breakeven calculator max ad cpa calculator dropshipping profit margins minimum selling price dropship facebook ads breakeven roas dropshipping-breakeven-calculator" class="tool-card rounded-3xl p-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 hover:border-sky-500/50 hover:shadow-xl hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between group"><div><div class="flex items-center justify-between mb-3"><span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 font-bold">TOOL</span><span class="text-[10px] text-slate-400 font-mono">100% Client-Side</span></div><h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition mb-2">Dropshipping Break-Even Calculator - Maximum Ad CPA & Minimum Price Estimator</h3><p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-4 leading-relaxed">Calculate the minimum viable selling price and maximum allowable ad spend (CPA) for dropshipped products to avoid running unprofitably.</p></div><div><div class="flex flex-wrap mb-3"><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#dropshipping breakeven calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#max ad cpa calculator</span><span class='inline-block bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-[11px] px-2 py-0.5 rounded-full font-mono mr-1.5 mb-1.5 border border-sky-200/50 dark:border-sky-800/50'>#dropshipping profit margins</span></div><div class="text-xs font-bold text-sky-600 dark:text-sky-400 flex items-center space-x-1 group-hover:translate-x-1 transition-transform"><span>Launch Tool</span><span>&rarr;</span></div></div></a>
+      </div>
+    </div>
 
-          function filterCards() {
-            const query = searchInput.value.trim().toLowerCase();
-            clearBtn.classList.toggle('hidden', !query);
+    <script>
+    (function() {
+      const priceSlider = document.getElementById('bento-price-slider');
+      const cogsSlider = document.getElementById('bento-cogs-slider');
+      const priceVal = document.getElementById('bento-price-val');
+      const cogsVal = document.getElementById('bento-cogs-val');
+      const feesDisp = document.getElementById('bento-fees-disp');
+      const profitDisp = document.getElementById('bento-profit-disp');
+      const marginDisp = document.getElementById('bento-margin-disp');
 
-            let visibleCount = 0;
-            cards.forEach(card => {
-              const corpus = card.getAttribute('data-search') || '';
-              const matches = !query || corpus.includes(query);
-              card.style.display = matches ? '' : 'none';
-              if (matches) visibleCount++;
-            });
+      function updateFbaSim() {
+        const price = parseFloat(priceSlider.value) || 40;
+        const cogs = parseFloat(cogsSlider.value) || 9.5;
+        priceVal.innerText = '$' + price.toFixed(2);
+        cogsVal.innerText = '$' + cogs.toFixed(2);
 
-            if (statsEl) {
-              statsEl.innerText = query ? ('Found __N__ of __TOTAL__ tools'.replace('__N__', visibleCount).replace('__TOTAL__', totalCards)) : ('Showing all __N__ developer utilities'.replace('__N__', totalCards));
-            }
+        const referral = price * 0.15;
+        const pickPack = 4.75;
+        const totalFees = referral + pickPack;
+        const profit = price - cogs - totalFees;
+        const margin = ((profit / price) * 100).toFixed(1);
 
-            if (emptyState) {
-              emptyState.classList.toggle('hidden', visibleCount > 0);
-            }
+        feesDisp.innerText = '$' + totalFees.toFixed(2);
+        profitDisp.innerText = '$' + profit.toFixed(2);
+        marginDisp.innerText = margin + '%';
+      }
+
+      if (priceSlider && cogsSlider) {
+        priceSlider.addEventListener('input', updateFbaSim);
+        cogsSlider.addEventListener('input', updateFbaSim);
+        updateFbaSim();
+      }
+
+      const searchInput = document.getElementById('tool-search');
+      const clearBtn = document.getElementById('btn-clear-search');
+      const resetBtn = document.getElementById('btn-reset-filter');
+      const emptyState = document.getElementById('no-tools-found');
+      const cards = Array.from(document.querySelectorAll('.tool-card'));
+      const statsEl = document.getElementById('search-stats');
+      const totalCards = cards.length;
+
+      function filterCards() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (clearBtn) clearBtn.classList.toggle('hidden', !query);
+
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const corpus = card.getAttribute('data-search') || '';
+          const matches = !query || corpus.includes(query);
+          card.style.display = matches ? '' : 'none';
+          if (matches) visibleCount++;
+        });
+
+        if (statsEl) {
+          statsEl.innerText = query ? ('Found __N__ of __TOTAL__ tools'.replace('__N__', visibleCount).replace('__TOTAL__', totalCards)) : ('Showing all __N__ developer utilities'.replace('__N__', totalCards));
+        }
+
+        if (emptyState) {
+          emptyState.classList.toggle('hidden', visibleCount > 0);
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterCards);
+
+        document.addEventListener('keydown', e => {
+          const isSearchKey = (e.key === '/' && document.activeElement !== searchInput && document.activeElement.tagName !== 'TEXTAREA' && document.activeElement.tagName !== 'INPUT') ||
+                              (e.key.toLowerCase() === 'k' && (e.ctrlKey || e.metaKey));
+          if (isSearchKey) {
+            e.preventDefault();
+            searchInput.focus();
+            searchInput.select();
           }
-
-          if (searchInput) {
-            searchInput.addEventListener('input', filterCards);
-
-            document.addEventListener('keydown', e => {
-              const isSearchKey = (e.key === '/' && document.activeElement !== searchInput && document.activeElement.tagName !== 'TEXTAREA' && document.activeElement.tagName !== 'INPUT') ||
-                                  (e.key.toLowerCase() === 'k' && (e.ctrlKey || e.metaKey));
-              if (isSearchKey) {
-                e.preventDefault();
-                searchInput.focus();
-                searchInput.select();
-              }
-              if (e.key === 'Escape' && document.activeElement === searchInput) {
-                searchInput.value = '';
-                filterCards();
-                searchInput.blur();
-              }
-            });
+          if (e.key === 'Escape' && document.activeElement === searchInput) {
+            searchInput.value = '';
+            filterCards();
+            searchInput.blur();
           }
+        });
+      }
 
-          if (clearBtn) {
-            clearBtn.addEventListener('click', () => {
-              searchInput.value = '';
-              filterCards();
-              searchInput.focus();
-            });
-          }
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          filterCards();
+          searchInput.focus();
+        });
+      }
 
-          if (resetBtn) {
-            resetBtn.addEventListener('click', () => {
-              searchInput.value = '';
-              filterCards();
-            });
-          }
-        })();
-        </script>
-        
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          filterCards();
+          searchInput.focus();
+        });
+      }
+    })();
+    </script>
+    
 
     
   </main>
