@@ -1,0 +1,15 @@
+{
+  "name": "CrossCalc - Cross-Border E-Commerce & FBA Suite",
+  "short_name": "CrossCalc - ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#0284c7",
+  "icons": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml"
+    }
+  ]
+}

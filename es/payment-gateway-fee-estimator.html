@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Comparador de Comisiones de Pasarelas de Pago - Stripe vs PayPal vs Shopify | CrossCalc - Cross-Border E-Commerce & FBA Suite</title>
   <meta name="description" content="Compare las comisiones totales que le cobran las distintas pasarelas de pago y elija la más rentable para su volumen de ventas.">
-  <meta name="keywords" content="CrossCalc - Cross-Border E-Commerce & FBA Suite, amazon fba calculator, shopify profit margin, customs tariff, landed freight cost, cross border ecommerce">
+  <meta name="keywords" content="calculadora comisiones stripe paypal, calculadora comisiones stripe paypal, comparar tarifas pasarelas de pago, comisiones datáfono virtual, CrossCalc - Cross-Border E-Commerce & FBA Suite">
   <meta name="author" content="CrossCalc - Cross-Border E-Commerce & FBA Suite">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://crosscalc.globalcorehub.com/es/payment-gateway-fee-estimator">
@@ -141,6 +141,11 @@
     "browserRequirements": "Requires JavaScript. Requires HTML5.",
     "url": "https://crosscalc.globalcorehub.com/es/payment-gateway-fee-estimator",
     "description": "Compare las comisiones totales que le cobran las distintas pasarelas de pago y elija la más rentable para su volumen de ventas.",
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://crosscalc.globalcorehub.com/es/payment-gateway-fee-estimator",
+      "name": "Execute Comisiones Pasarela"
+    },
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -149,7 +154,6 @@
   }
   </script>
 
-  
   <!-- BreadcrumbList Schema.org -->
   <script type="application/ld+json">
   {
@@ -177,7 +181,6 @@
     ]
   }
   </script>
-  
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-sky-500 selection:text-white">
 
@@ -194,7 +197,7 @@
         </div>
         <div>
           <span class="font-extrabold text-base tracking-tight text-slate-900 dark:text-slate-100 group-hover:text-sky-600 transition">CrossCalc - Cross-Border E-Commerce & FBA Suite</span>
-          <span class="hidden sm:inline-block ml-2 text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">FBA & DTC DASHBOARD</span>
+          <span class="hidden sm:inline-block ml-2 text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">100% CLIENT-SIDE AI</span>
         </div>
       </a>
 
@@ -214,48 +217,51 @@
         </a>
         
 
-        <!-- All Tools Dropdown -->
-        <div class="relative group/menu">
-          <button id="tools-dropdown-btn" class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1">
+        <!-- All Tools Dropdown (Zero-Gap Hover + Click Controller) -->
+        <div class="relative" id="tools-dropdown-container">
+          <button id="tools-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false" class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1 cursor-pointer select-none">
             <span>Herramientas</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            <svg id="tools-dropdown-arrow" class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div id="tools-dropdown-panel" class="hidden group-hover/menu:block absolute right-0 mt-2 w-72 rounded-3xl bento-glass shadow-2xl p-2.5 z-50">
-            <div class="text-[10px] font-mono text-slate-400 px-3 py-1.5 uppercase tracking-wider font-bold border-b border-slate-100 dark:border-slate-800 mb-1">
-              Herramientas (6)
-            </div>
-            <div class="max-h-80 overflow-y-auto space-y-1">
-              
-              <a href="/es/amazon-fba-fee-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
-                <div class="font-bold text-slate-900 dark:text-slate-100">Calculadora FBA</div>
-                <div class="text-[11px] text-slate-500 truncate">Calcule con precisión las comisiones por referencia de Amazon, tarifas de logística FBA y beneficio neto por artículo.</div>
-              </a>
-              
-              <a href="/es/shopify-profit-margin-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
-                <div class="font-bold text-slate-900 dark:text-slate-100">Margen Shopify</div>
-                <div class="text-[11px] text-slate-500 truncate">Analice la rentabilidad de su tienda Shopify incluyendo publicidad (CPA), costes de envío y comisiones de pasarela.</div>
-              </a>
-              
-              <a href="/es/cross-border-landed-cost-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
-                <div class="font-bold text-slate-900 dark:text-slate-100">Coste en Destino</div>
-                <div class="text-[11px] text-slate-500 truncate">Calcule el coste total por unidad puesta en almacén sumando precio FOB, flete internacional, aranceles y seguro.</div>
-              </a>
-              
-              <a href="/es/vat-customs-tariff-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
-                <div class="font-bold text-slate-900 dark:text-slate-100">Arancel e IVA</div>
-                <div class="text-[11px] text-slate-500 truncate">Estime los aranceles aduaneros e impuestos a la importación exigibles según el valor declarado en factura comercial.</div>
-              </a>
-              
-              <a href="/es/payment-gateway-fee-estimator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
-                <div class="font-bold text-slate-900 dark:text-slate-100">Comisiones Pasarela</div>
-                <div class="text-[11px] text-slate-500 truncate">Compare las comisiones totales que le cobran las distintas pasarelas de pago y elija la más rentable para su volumen de ventas.</div>
-              </a>
-              
-              <a href="/es/dropshipping-breakeven-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
-                <div class="font-bold text-slate-900 dark:text-slate-100">Punto Equilibrio</div>
-                <div class="text-[11px] text-slate-500 truncate">Determine el precio mínimo de venta y el coste por adquisición publicitario máximo para no perder dinero en dropshipping.</div>
-              </a>
-              
+          <!-- Bridge wrapper: top-full pt-2 guarantees mouse never leaves hit-box when moving to panel -->
+          <div id="tools-dropdown-panel" class="hidden absolute right-0 top-full pt-2 w-72 z-50 transition-all duration-150">
+            <div class="rounded-3xl bento-glass shadow-2xl p-2.5 border border-slate-200/80 dark:border-slate-700/80">
+              <div class="text-[10px] font-mono text-slate-400 px-3 py-1.5 uppercase tracking-wider font-bold border-b border-slate-100 dark:border-slate-800 mb-1">
+                Herramientas (6)
+              </div>
+              <div class="max-h-80 overflow-y-auto space-y-1">
+                
+                <a href="/es/amazon-fba-fee-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
+                  <div class="font-bold text-slate-900 dark:text-slate-100">Calculadora FBA</div>
+                  <div class="text-[11px] text-slate-500 truncate">Calcule con precisión las comisiones por referencia de Amazon, tarifas de logística FBA y beneficio neto por artículo.</div>
+                </a>
+                
+                <a href="/es/shopify-profit-margin-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
+                  <div class="font-bold text-slate-900 dark:text-slate-100">Margen Shopify</div>
+                  <div class="text-[11px] text-slate-500 truncate">Analice la rentabilidad de su tienda Shopify incluyendo publicidad (CPA), costes de envío y comisiones de pasarela.</div>
+                </a>
+                
+                <a href="/es/cross-border-landed-cost-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
+                  <div class="font-bold text-slate-900 dark:text-slate-100">Coste en Destino</div>
+                  <div class="text-[11px] text-slate-500 truncate">Calcule el coste total por unidad puesta en almacén sumando precio FOB, flete internacional, aranceles y seguro.</div>
+                </a>
+                
+                <a href="/es/vat-customs-tariff-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
+                  <div class="font-bold text-slate-900 dark:text-slate-100">Arancel e IVA</div>
+                  <div class="text-[11px] text-slate-500 truncate">Estime los aranceles aduaneros e impuestos a la importación exigibles según el valor declarado en factura comercial.</div>
+                </a>
+                
+                <a href="/es/payment-gateway-fee-estimator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
+                  <div class="font-bold text-slate-900 dark:text-slate-100">Comisiones Pasarela</div>
+                  <div class="text-[11px] text-slate-500 truncate">Compare las comisiones totales que le cobran las distintas pasarelas de pago y elija la más rentable para su volumen de ventas.</div>
+                </a>
+                
+                <a href="/es/dropshipping-breakeven-calculator" class="block px-3 py-2 rounded-2xl text-xs hover:bg-sky-50 dark:hover:bg-slate-800 transition">
+                  <div class="font-bold text-slate-900 dark:text-slate-100">Punto Equilibrio</div>
+                  <div class="text-[11px] text-slate-500 truncate">Determine el precio mínimo de venta y el coste por adquisición publicitario máximo para no perder dinero en dropshipping.</div>
+                </a>
+                
+              </div>
             </div>
           </div>
         </div>
@@ -365,16 +371,22 @@
     
     <!-- Semantic Breadcrumbs for Subpages -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-      <nav aria-label="Breadcrumb" class="inline-flex items-center space-x-2 text-xs font-mono text-slate-500 bento-glass px-4 py-2 rounded-full shadow-sm">
-        <a href="/es/" class="hover:text-sky-600 transition flex items-center space-x-1">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-          <span>Inicio</span>
-        </a>
-        <span>/</span>
-        <a href="/es/#tools-grid" class="hover:text-sky-600 transition">Herramientas</a>
-        <span>/</span>
-        <span class="font-bold text-slate-900 dark:text-slate-100 truncate max-w-xs">Comisiones Pasarela</span>
-      </nav>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <nav aria-label="Breadcrumb" class="inline-flex items-center space-x-2 text-xs font-mono text-slate-500 bento-glass px-4 py-2 rounded-full shadow-sm">
+          <a href="/es/" class="hover:text-sky-600 transition flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+            <span>Inicio</span>
+          </a>
+          <span>/</span>
+          <a href="/es/#tools-grid" class="hover:text-sky-600 transition">Herramientas</a>
+          <span>/</span>
+          <span class="font-bold text-slate-900 dark:text-slate-100 truncate max-w-xs">Comisiones Pasarela</span>
+        </nav>
+        <div id="hardware-accel-badge" class="inline-flex items-center space-x-2 text-[11px] font-mono bento-glass px-3.5 py-1.5 rounded-full text-slate-600 dark:text-slate-300 w-fit">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="accel-status-text">WebAssembly / CPU Ready</span>
+        </div>
+      </div>
     </div>
     
 
@@ -528,6 +540,8 @@
             
             <li><a href="/es/payment-gateway-fee-estimator" class="hover:text-sky-600 transition">Comisiones Pasarela</a></li>
             
+            <li><a href="/es/dropshipping-breakeven-calculator" class="hover:text-sky-600 transition">Punto Equilibrio</a></li>
+            
           </ul>
         </div>
         <div>
@@ -552,7 +566,7 @@
         </div>
       </div>
       <div class="pt-6 border-t border-slate-200/60 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 font-mono">
-        <div>&copy; CrossCalc - Cross-Border E-Commerce & FBA Suite. Apple Bento Glass Engine.</div>
+        <div>&copy; 2026 CrossCalc - Cross-Border E-Commerce & FBA Suite. 100% Client-Side Private AI. All rights reserved.</div>
         <div class="mt-2 sm:mt-0">7 Idiomas Globales · 42 Puntos de Acceso Localizados · 100% Lado Cliente</div>
       </div>
     </div>
@@ -571,6 +585,75 @@
     if (mobileBtn && mobileMenu) {
       mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
+
+    // All Tools Dropdown Controller: Zero-Gap Hover + Click Toggle + Click Outside
+    (function initToolsDropdown() {
+      const container = document.getElementById('tools-dropdown-container');
+      const btn = document.getElementById('tools-dropdown-btn');
+      const panel = document.getElementById('tools-dropdown-panel');
+      const arrow = document.getElementById('tools-dropdown-arrow');
+      if (!container || !btn || !panel) return;
+
+      let hoverTimer = null;
+      let isOpen = false;
+
+      function openPanel() {
+        if (hoverTimer) clearTimeout(hoverTimer);
+        isOpen = true;
+        panel.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        if (arrow) arrow.classList.add('rotate-180');
+      }
+
+      function closePanel() {
+        if (hoverTimer) clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(() => {
+          isOpen = false;
+          panel.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          if (arrow) arrow.classList.remove('rotate-180');
+        }, 220);
+      }
+
+      function togglePanel(e) {
+        e.stopPropagation();
+        if (isOpen) {
+          isOpen = false;
+          panel.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          if (arrow) arrow.classList.remove('rotate-180');
+        } else {
+          openPanel();
+        }
+      }
+
+      container.addEventListener('mouseenter', openPanel);
+      container.addEventListener('mouseleave', closePanel);
+      btn.addEventListener('click', togglePanel);
+
+      document.addEventListener('click', (e) => {
+        if (!container.contains(e.target)) {
+          isOpen = false;
+          panel.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          if (arrow) arrow.classList.remove('rotate-180');
+        }
+        // Auto close open details tag when clicking outside
+        document.querySelectorAll('details[open]').forEach(det => {
+          if (!det.contains(e.target)) det.removeAttribute('open');
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isOpen) {
+          isOpen = false;
+          panel.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          if (arrow) arrow.classList.remove('rotate-180');
+          btn.focus();
+        }
+      });
+    })();
 
     const btt = document.getElementById('back-to-top-btn');
     if (btt) {
@@ -594,11 +677,20 @@
       }, 2000);
     };
 
-    // Smooth Centered Search Focus Runtime
+    // Smooth Centered Search Focus Runtime with Header Offset
     window.focusAndCenterSearch = function() {
       const searchInput = document.getElementById('tool-search');
       if (searchInput) {
-        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const header = document.querySelector('header') || document.querySelector('nav');
+        const headerOffset = (header ? header.offsetHeight : 70) + 24;
+        const elementPosition = searchInput.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+
         setTimeout(() => {
           try {
             searchInput.focus({ preventScroll: true });
@@ -649,6 +741,28 @@
       }
     });
   })();
+  </script>
+  <!-- Hardware Acceleration & Compatibility Detection -->
+  <script>
+  (function checkHardwareAcceleration() {
+    if ('gpu' in navigator) {
+      navigator.gpu.requestAdapter().then(adapter => {
+        const el = document.getElementById('accel-status-text');
+        if (el) el.textContent = adapter ? 'WebGPU Accelerated ⚡' : 'WebAssembly Mode (CPU Fallback)';
+      }).catch(() => {
+        const el = document.getElementById('accel-status-text');
+        if (el) el.textContent = 'WebAssembly Mode (CPU Fallback)';
+      });
+    }
+  })();
+  </script>
+  <!-- Offline Service Worker Registration -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {});
+    });
+  }
   </script>
 </body>
 </html>
