@@ -391,117 +391,47 @@
     
 
     
-<div class="max-w-4xl mx-auto">
-  <div class="bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 p-4 sm:p-6 md:p-8">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-slate-200/80 dark:border-slate-800/80">
-      <div>
-        <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 font-mono mb-2">
-          <span>[CROSS-BORDER MERCHANT FEE CALCULATOR]</span>
-        </div>
-        <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">Amazon FBA 手数料・利益計算ツール - 販売手数料とFBA配送代行費の自動試算</h1>
-        <p class="text-xs sm:text-sm opacity-70 mt-1 max-w-xl">商品サイズ区分や重量、商品カテゴリーから、Amazon販売手数料とFBA配送手数料を自動照合し、1商品ごとの純利益率を算出。</p>
-      </div>
-    </div>
-
-    <!-- Financial Compliance Disclaimer Banner -->
-    <div class="mt-4 p-3.5 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-mono flex items-start space-x-2">
-      <span class="text-base leading-none">⚠️</span>
-      <span class="leading-relaxed">⚠️ 免責事項：本ツールの計算結果は事業計画・見積りの目安であり、公式な税務・法的な助言ではありません。確定申告や正式な契約時は税理士・専門家にご相談ください。</span>
-    </div>
-
-    <!-- Inputs -->
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label class="block text-xs font-bold opacity-75 mb-1.5">決済・請求額面総額</label>
-        <input id="fee-amount" type="number" min="1" max="1000000" value="1000" step="50" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
-      </div>
-      <div>
-        <label class="block text-xs font-bold opacity-75 mb-1.5">決済代行・送金サービス</label>
-        <select id="fee-gateway" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#10b981]">
-          <option value="stripe-standard" selected>Stripe (2.9% + $0.30)</option>
-          <option value="stripe-intl">Stripe International (3.9% + $0.30)</option>
-          <option value="paypal-standard">PayPal Commercial (3.49% + $0.49)</option>
-          <option value="wise">Wise Business (~0.45% Low Cost Transfer)</option>
-          <option value="payoneer">Payoneer Receiving Account (1.0% - 2.0%)</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Results Display -->
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div class="p-5 rounded-xl border-2 border-[#10b981]/50 bg-[#10b981]/10 text-center">
-        <span class="text-xs font-bold uppercase font-mono tracking-wider block" style="color:#0284c7">最終的な実手取り受取額</span>
-        <div id="res-fee-net" class="text-3xl font-black font-mono mt-2" style="color:#0284c7">$970.70</div>
-      </div>
-      <div class="p-5 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 text-center">
-        <span class="text-xs font-bold opacity-70 block">差し引かれる手数料・為替スプレッド合計</span>
-        <div id="res-fee-deducted" class="text-3xl font-black font-mono mt-2 text-red-400">-$29.30</div>
-      </div>
-      <div class="p-5 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 text-center">
-        <span class="text-xs font-bold opacity-70 block">実質手数料率 (%)</span>
-        <div id="res-fee-rate" class="text-3xl font-black font-mono mt-2 text-amber-400">2.93%</div>
-      </div>
-    </div>
-
-    
-    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-slate-800/80 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">Amazon FBA 手数料・利益計算ツール - 販売手数料とFBA配送代行費の自動試算 について</h2>
-        <p class="text-xs opacity-75 leading-relaxed">フリーランスや個人事業主向けの <strong>Amazon FBA利益計算機</strong> を高精度に算出する完全無料のWebツールです。情報漏洩なし。</p>
-        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mt-4 mb-2">対応しているビジネス・財務計算項目</h3>
-        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>Amazon FBA利益計算機</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>FBA手数料シミュレータ</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>Amazon販売手数料 計算</li></ul>
-      </div>
-      <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">アーキテクチャとプライバシー保護</h2>
-        <div class="space-y-3">
-          <div class="p-3 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#0284c7">
-              <span>✓</span> 100% 端末内処理・事業財務の完全秘密保持
-            </h4>
-            <p class="text-[11px] opacity-70 mt-1 leading-normal">時給設定や顧客への請求書情報などは外部サーバーに送信されず、端末内でのみ安全に完結します。</p>
-          </div>
-          <div class="p-3 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#0284c7">
-              <span>⚡</span> ミリ秒単位のリアルタイム財務試算
-            </h4>
-            <p class="text-[11px] opacity-70 mt-1 leading-normal">手数料や資金繰りランウェイを瞬時に算出します。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
+<section class="max-w-4xl mx-auto p-6 rounded-xl border bg-white dark:bg-slate-900">
+<h1 class="text-2xl font-bold">Amazon FBA 手数料・利益計算ツール - 販売手数料とFBA配送代行費の自動試算</h1>
+<p class="my-4 text-sm">同じ通貨で対象市場の手数料を入力してください。最新の Amazon 手数料は取得しません。</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<label>販売価格<input id="fba-price" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>商品原価<input id="fba-cost" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>販売手数料率 (%)<input id="fba-referral" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>FBA 配送手数料<input id="fba-fulfillment" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>1個あたりのその他手数料<input id="fba-other" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
 </div>
-
+<div class="grid sm:grid-cols-3 gap-4 my-6" aria-live="polite">
+<div>手数料合計<output id="fba-fees" class="block text-2xl font-bold">-</output>
+</div>
+<div>1個あたりの純利益<output id="fba-profit" class="block text-2xl font-bold">-</output>
+</div>
+<div>利益率<output id="fba-margin" class="block text-2xl font-bold">-</output>
+</div>
+</div>
+</section>
 <script>
-(function() {
-  const amtEl = document.getElementById('fee-amount');
-  const gwEl = document.getElementById('fee-gateway');
-  const netEl = document.getElementById('res-fee-net');
-  const dedEl = document.getElementById('res-fee-deducted');
-  const ratEl = document.getElementById('res-fee-rate');
-
+(() => {
+  const inputs = ['price', 'cost', 'referral', 'fulfillment', 'other'].map(id => document.getElementById('fba-' + id));
+  const outputs = ['fees', 'profit', 'margin'].map(id => document.getElementById('fba-' + id));
   function calculate() {
-    const amt = Math.max(1, parseFloat(amtEl.value) || 100);
-    const gw = gwEl.value;
-
-    let fee = 0;
-    if (gw === 'stripe-standard') fee = (amt * 0.029) + 0.30;
-    else if (gw === 'stripe-intl') fee = (amt * 0.039) + 0.30;
-    else if (gw === 'paypal-standard') fee = (amt * 0.0349) + 0.49;
-    else if (gw === 'wise') fee = (amt * 0.0045) + 0.50;
-    else if (gw === 'payoneer') fee = (amt * 0.015);
-
-    const net = Math.max(0, amt - fee);
-    const effRate = (fee / amt) * 100;
-
-    netEl.textContent = '$' + net.toFixed(2);
-    dedEl.textContent = '-$' + fee.toFixed(2);
-    ratEl.textContent = effRate.toFixed(2) + '%';
+    const values = inputs.map(input => input.value.trim() === '' ? NaN : Number(input.value));
+    const [price, cost, referral, fulfillment, other] = values;
+    const valid = values.map((value, i) => Number.isFinite(value) && value >= 0 && (i !== 0 || value > 0) && (i !== 2 || value <= 100));
+    inputs.forEach((input, i) => input.setAttribute('aria-invalid', String(!valid[i])));
+    const fees = price * referral / 100 + fulfillment + other;
+    const profit = price - cost - fees;
+    if (!valid.every(Boolean) || !Number.isFinite(fees) || !Number.isFinite(profit)) { outputs.forEach(el => { el.textContent = '-'; }); return; }
+    outputs[0].textContent = fees.toFixed(2);
+    outputs[1].textContent = profit.toFixed(2);
+    outputs[2].textContent = (profit / price * 100).toFixed(2) + '%';
   }
-
-  amtEl.addEventListener('input', calculate);
-  gwEl.addEventListener('change', calculate);
+  inputs.forEach(input => input.addEventListener('input', calculate));
   calculate();
 })();
 </script>

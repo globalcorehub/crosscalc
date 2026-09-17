@@ -391,117 +391,47 @@
     
 
     
-<div class="max-w-4xl mx-auto">
-  <div class="bg-white/80 dark:bg-[#131b2e]/80 backdrop-blur-xl rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 p-4 sm:p-6 md:p-8">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 sm:pb-6 border-b border-slate-200/80 dark:border-slate-800/80">
-      <div>
-        <div class="inline-flex items-center px-2 py-0.5 rounded text-[11px] bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 rounded-full text-xs font-semibold px-2.5 py-0.5 font-mono mb-2">
-          <span>[CROSS-BORDER MERCHANT FEE CALCULATOR]</span>
-        </div>
-        <h1 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight">Amazon FBA Fee & Profit Calculator - Fulfillment & Referral Margin Estimator</h1>
-        <p class="text-xs sm:text-sm opacity-70 mt-1 max-w-xl">Calculate Amazon FBA fulfillment fees, category referral percentages, storage costs, and exact net profit margin per unit.</p>
-      </div>
-    </div>
-
-    <!-- Financial Compliance Disclaimer Banner -->
-    <div class="mt-4 p-3.5 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-400 text-xs font-mono flex items-start space-x-2">
-      <span class="text-base leading-none">⚠️</span>
-      <span class="leading-relaxed">⚠️ Disclaimer: Financial simulations for estimation and planning purposes only. Not official accounting, tax, or legal advice. Consult certified professionals for formal filings.</span>
-    </div>
-
-    <!-- Inputs -->
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label class="block text-xs font-bold opacity-75 mb-1.5">Gross Transaction Amount ($)</label>
-        <input id="fee-amount" type="number" min="1" max="1000000" value="1000" step="50" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 font-mono focus:outline-none focus:ring-2 focus:ring-[#10b981]">
-      </div>
-      <div>
-        <label class="block text-xs font-bold opacity-75 mb-1.5">Payment Gateway / Processor</label>
-        <select id="fee-gateway" class="w-full px-3.5 py-2.5 rounded-xl text-xs sm:text-sm border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#10b981]">
-          <option value="stripe-standard" selected>Stripe (2.9% + $0.30)</option>
-          <option value="stripe-intl">Stripe International (3.9% + $0.30)</option>
-          <option value="paypal-standard">PayPal Commercial (3.49% + $0.49)</option>
-          <option value="wise">Wise Business (~0.45% Low Cost Transfer)</option>
-          <option value="payoneer">Payoneer Receiving Account (1.0% - 2.0%)</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Results Display -->
-    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div class="p-5 rounded-xl border-2 border-[#10b981]/50 bg-[#10b981]/10 text-center">
-        <span class="text-xs font-bold uppercase font-mono tracking-wider block" style="color:#0284c7">Net Amount You Receive</span>
-        <div id="res-fee-net" class="text-3xl font-black font-mono mt-2" style="color:#0284c7">$970.70</div>
-      </div>
-      <div class="p-5 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 text-center">
-        <span class="text-xs font-bold opacity-70 block">Total Processor Fees Deducted</span>
-        <div id="res-fee-deducted" class="text-3xl font-black font-mono mt-2 text-red-400">-$29.30</div>
-      </div>
-      <div class="p-5 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5 text-center">
-        <span class="text-xs font-bold opacity-70 block">Effective Fee Rate (%)</span>
-        <div id="res-fee-rate" class="text-3xl font-black font-mono mt-2 text-amber-400">2.93%</div>
-      </div>
-    </div>
-
-    
-    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-slate-800/80 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-      <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">About Amazon FBA Fee & Profit Calculator - Fulfillment & Referral Margin Estimator</h2>
-        <p class="text-xs opacity-75 leading-relaxed">Online, zero-latency business utility for <strong>amazon fba calculator</strong>. Calculations and invoice formatting execute strictly inside your browser sandbox with zero telemetry or network calls.</p>
-        <h3 class="text-xs font-bold uppercase tracking-wider opacity-70 mt-4 mb-2">Supported Solopreneur & Business Calculations</h3>
-        <ul class="space-y-0.5"><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>amazon fba calculator</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>fba fee calculator</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>amazon referral fee</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>fba profit margin calculator</li><li class="flex items-center text-xs opacity-75 py-1 font-mono"><span class="mr-2" style="color:#0284c7">+</span>amazon seller revenue calculator</li></ul>
-      </div>
-      <div>
-        <h2 class="text-sm sm:text-base font-bold mb-2 sm:mb-3">Architecture & Privacy Guarantees</h2>
-        <div class="space-y-3">
-          <div class="p-3 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#0284c7">
-              <span>✓</span> 100% Private Commercial Data
-            </h4>
-            <p class="text-[11px] opacity-70 mt-1 leading-normal">Your business financials, client rates, and invoice details never leave your device. Complete financial confidentiality guaranteed.</p>
-          </div>
-          <div class="p-3 rounded-xl border border-slate-200/60 dark:border-slate-800/60 hover:border-sky-500/40 bg-white/5">
-            <h4 class="text-xs font-bold flex items-center gap-1.5" style="color:#0284c7">
-              <span>⚡</span> Real-Time Financial Formulas
-            </h4>
-            <p class="text-[11px] opacity-70 mt-1 leading-normal">Calculates taxation, fee deductions, and cash flow projections instantly in your browser.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
+<section class="max-w-4xl mx-auto p-6 rounded-xl border bg-white dark:bg-slate-900">
+<h1 class="text-2xl font-bold">Amazon FBA Fee & Profit Calculator - Fulfillment & Referral Margin Estimator</h1>
+<p class="my-4 text-sm">Enter your marketplace and product fees in one currency. This calculator does not fetch current Amazon fee schedules.</p>
+<div class="grid sm:grid-cols-2 gap-4">
+<label>Selling price<input id="fba-price" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>Product cost<input id="fba-cost" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>Referral fee (%)<input id="fba-referral" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>FBA fulfillment fee<input id="fba-fulfillment" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
+<label>Other fees per unit<input id="fba-other" type="number" min="0" step="any" class="block w-full border rounded p-2 bg-white dark:bg-slate-800">
+</label>
 </div>
-
+<div class="grid sm:grid-cols-3 gap-4 my-6" aria-live="polite">
+<div>Total fees<output id="fba-fees" class="block text-2xl font-bold">-</output>
+</div>
+<div>Net profit per unit<output id="fba-profit" class="block text-2xl font-bold">-</output>
+</div>
+<div>Profit margin<output id="fba-margin" class="block text-2xl font-bold">-</output>
+</div>
+</div>
+</section>
 <script>
-(function() {
-  const amtEl = document.getElementById('fee-amount');
-  const gwEl = document.getElementById('fee-gateway');
-  const netEl = document.getElementById('res-fee-net');
-  const dedEl = document.getElementById('res-fee-deducted');
-  const ratEl = document.getElementById('res-fee-rate');
-
+(() => {
+  const inputs = ['price', 'cost', 'referral', 'fulfillment', 'other'].map(id => document.getElementById('fba-' + id));
+  const outputs = ['fees', 'profit', 'margin'].map(id => document.getElementById('fba-' + id));
   function calculate() {
-    const amt = Math.max(1, parseFloat(amtEl.value) || 100);
-    const gw = gwEl.value;
-
-    let fee = 0;
-    if (gw === 'stripe-standard') fee = (amt * 0.029) + 0.30;
-    else if (gw === 'stripe-intl') fee = (amt * 0.039) + 0.30;
-    else if (gw === 'paypal-standard') fee = (amt * 0.0349) + 0.49;
-    else if (gw === 'wise') fee = (amt * 0.0045) + 0.50;
-    else if (gw === 'payoneer') fee = (amt * 0.015);
-
-    const net = Math.max(0, amt - fee);
-    const effRate = (fee / amt) * 100;
-
-    netEl.textContent = '$' + net.toFixed(2);
-    dedEl.textContent = '-$' + fee.toFixed(2);
-    ratEl.textContent = effRate.toFixed(2) + '%';
+    const values = inputs.map(input => input.value.trim() === '' ? NaN : Number(input.value));
+    const [price, cost, referral, fulfillment, other] = values;
+    const valid = values.map((value, i) => Number.isFinite(value) && value >= 0 && (i !== 0 || value > 0) && (i !== 2 || value <= 100));
+    inputs.forEach((input, i) => input.setAttribute('aria-invalid', String(!valid[i])));
+    const fees = price * referral / 100 + fulfillment + other;
+    const profit = price - cost - fees;
+    if (!valid.every(Boolean) || !Number.isFinite(fees) || !Number.isFinite(profit)) { outputs.forEach(el => { el.textContent = '-'; }); return; }
+    outputs[0].textContent = fees.toFixed(2);
+    outputs[1].textContent = profit.toFixed(2);
+    outputs[2].textContent = (profit / price * 100).toFixed(2) + '%';
   }
-
-  amtEl.addEventListener('input', calculate);
-  gwEl.addEventListener('change', calculate);
+  inputs.forEach(input => input.addEventListener('input', calculate));
   calculate();
 })();
 </script>

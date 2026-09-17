@@ -478,13 +478,16 @@
   const txtRoas = document.getElementById('txt-ds-roas');
 
   function calc() {
-    const cost = Math.max(0, parseFloat(c.value) || 0);
-    const ship = Math.max(0, parseFloat(s.value) || 0);
-    const targetPct = (parseFloat(t.value) || 0) / 100;
+    const cost = parseFloat(c.value);
+    const ship = parseFloat(s.value);
+    const targetPct = parseFloat(t.value) / 100;
 
     const baseCost = cost + ship;
-    const recPrice = baseCost * 2.8;
-    const maxCpa = recPrice * 0.40;
+    if (![cost, ship, targetPct].every(Number.isFinite) || cost < 0 || ship < 0 || baseCost <= 0 || targetPct < 0 || targetPct >= 1) {
+      [txtPrice, txtCpa, txtRoas].forEach(el => { el.textContent = '-'; }); return;
+    }
+    const recPrice = Math.max(baseCost * 2.8, baseCost / (1 - targetPct));
+    const maxCpa = Math.max(0, recPrice * (1 - targetPct) - baseCost);
     const roas = recPrice / (recPrice - baseCost);
 
     txtPrice.textContent = '$' + recPrice.toFixed(2);
